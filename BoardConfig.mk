@@ -226,14 +226,19 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # TWRP
 TW_THEME := portrait_hdpi
+RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
+BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/module/g_android/parameters/file"
+TW_BRIGHTNESS_PATH := "/sys/devices/soc/900000.qcom\x2cmdss_mdp/900000.qcom\x2cmdss_mdp:qcom\x2cmdss_fb_primary/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_LANGUAGE := en-US
-TW_EXTRA_LANGUAGES := true
+TW_DEFAULT_BRIGHTNESS := 162
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_MTP_DEVICE := "/dev/mtp_usb"
+TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_CRYPTO := true
-TW_EXCLUDE_SUPERSU := true
 
 #MultiROM config. MultiROM also uses parts of TWRP config
 MR_INPUT_TYPE := type_b
@@ -241,5 +246,5 @@ MR_INIT_DEVICES := device/oneplus/oneplus3/mr_init_devices.c
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_FSTAB := device/oneplus/oneplus3/rootdir/etc/twrp.fstab
-MR_KEXEC_MEM_MIN := 0x20000000
+MR_KEXEC_MEM_MIN := 0x42000000
 MR_INFOS := device/oneplus/oneplus3/mrom_infos
