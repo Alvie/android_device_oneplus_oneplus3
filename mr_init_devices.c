@@ -20,10 +20,10 @@ const char *mr_init_devices[] =
     "/sys/module/mmc_core",
     "/sys/module/mmcblk",
 
-    "/sys/devices/soc.0/gpio_keys.81/input*",
+    "/sys/devices/soc/soc:gpio_keys/input*",
     "/sys/devices/virtual/input*",
     "/sys/devices/virtual/misc/uinput",
-    "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0020/input*",
+    "/sys/devices/soc/f5ba000.i2c/i2c-12/12-0020/input*",
 
     // for adb
     "/sys/class/tty/ptmx",
